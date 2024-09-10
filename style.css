@@ -1,0 +1,240 @@
+/* reset preflight */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+body {
+    background-color: rgb(0, 178, 249) ;
+
+  }
+  .container
+
+p {
+  color: rgb(12, 12, 12);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 3rem 1rem 5rem;
+}
+
+/* Header */
+header {
+  max-width: 768px;
+}
+
+header figure {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+header figure img {
+  width: 7rem;
+   border-radius: 80px;
+  border: solid 1px rgb(59, 43, 6);
+  padding: 0.25rem;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+header figure figcaption {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+header figure figcaption span:first-child {
+  font-size: 1.7rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+header figure figcaption span:last-child {
+  color: rgb(248, 248, 250);
+  font-family: monospace;
+}
+
+header section {
+  margin-top: 2rem;
+}
+
+header section h1 {
+  font-weight: 500;
+  margin-bottom: .5rem;
+  scroll-margin-top: 2rem;
+}
+
+header section p {
+  text-align: justify;
+}
+
+
+/* Main */
+main {
+  max-width: 1280px;
+}
+
+main .main_title {
+  margin-bottom: 66px;
+  text-align: center;
+}
+
+main .main_title span {
+  color: rgb(0, 0, 0);
+}
+
+
+main ul {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+main ul li figure.card {
+  border: solid 1px rgb(63 63 70);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+main ul li figure.card .card_header {
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+}
+
+main ul li figure.card .card_header .card_image {
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+  border-radius: 12px; /* bentuk gambar teman */
+}
+
+main ul li figure.card .card_header .card_image img {
+  margin-top: -12px;
+}
+
+main ul li figure.card .card_header .card_description {
+  font-weight: 600;
+}
+
+main ul li figure.card .card_header .card_description {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+main ul li figure.card .card_header .card_description span:last-child {
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+}
+
+main ul li figure.card .card_content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  margin-top: 20px;
+}
+
+
+/* Footer */
+footer {
+  padding: 3rem 1rem;
+}
+
+footer section {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  justify-content: center;
+}
+
+footer section img:first-child {
+  width: 3rem;
+}
+
+footer section img:last-child {
+  width: 2.5rem;
+}
+
+footer p {
+  text-align: center;
+  font-size: 14px;
+}
+
+
+/* Responsive Design */
+/* Tablet */
+@media screen and (min-width: 768px) {
+  /* Header */
+  header figure {
+    justify-content: space-between;
+  }
+
+  header figure img {
+    order: 2;
+    width: 12rem;
+  }
+  
+  header figure figcaption {
+    order: 1;
+  }
+
+  header figure figcaption span:first-child {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  header figure figcaption span:last-child {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+
+  /* Main */
+  main .main_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1rem;
+  }
+
+  main .main_title h2 {
+    font-size: 32px;
+  }
+
+  main .main_title span {
+    font-size: 20px;
+  }
+
+  main ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  main ul li figure.card .card_header .card_description span:first-child {
+    font-size: 20px;
+  }
+}
+
+
+/* Laptop */
+@media screen and (min-width: 1024px) {
+  /* Header */
+  header figure img {
+    width: 14rem;
+  }
+
+
+  /* Main */
+  main ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
