@@ -3,17 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>240411100076[Ahmad soleh Majid]</title>
+    <title>240411100076 [Ahmad Soleh Majid] - Biodata Informatika 2024</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="./script.js"></script>
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <!-- Header -->
     <header class="container">
-      <figure>
-        <img src="img/240411100076_ahmad soleh majid_selfie (1).jpeg" alt="Ahmadsolehmajid" id="Ahmadsolehmajid" />
+      <figure class="profile-header-card">
+        <div class="avatar-container">
+          <img src="https://res.cloudinary.com/dgxbyse13/image/upload/v1723893178/Penugasan/vznqtm5ij10fxsldzzmt.jpg" alt="Ahmad Soleh Majid" id="Ahmadsolehmajid" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ahmad+Soleh+Majid&background=00b2f9&color=fff&size=128';" />
+          <div class="glow-ring"></div>
+        </div>
         <figcaption>
-          <span>AHMAD SOLEH MAJID</span><span>240411100076</span>
+          <span class="name">AHMAD SOLEH MAJID</span>
+          <span class="nim-badge">240411100076</span>
         </figcaption>
       </figure>
       <section>
@@ -30,20 +38,63 @@
     <!-- Main Content -->
     <main class="container">
       <div class="main_title">
-        <h2>INFORMATIKA</h2>
-        <span>Biodata angkatan Teknik Informatika 2024.</span>
-        <hr class="garisbawah">
+        <h2>TEKNIK INFORMATIKA</h2>
+        <span class="sub-title">Biodata Angkatan 2024</span>
+        <div class="divider"></div>
       </div>
-      <h1></h1>
+
+      <!-- Search & Filter Panel -->
+      <section class="search-filter-panel">
+        <div class="search-box">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="search_input" placeholder="Cari nama atau NIM teman..." />
+        </div>
+        <div class="filter-box">
+          <span class="filter-label">Kelompok</span>
+          <div class="filter-buttons" id="filter_buttons">
+            <!-- Rendered dynamically in script.js -->
+          </div>
+        </div>
+      </section>
+
       <ul id="friend_list"></ul>
     </main>
     <!-- Footer -->
     <footer>
-      <section>
-        <img src="./assets/himatif.png" alt="Himatif">
-        <img src="./assets/booting.png" alt="Booting & Memory 2024">
+      <section class="footer-logos">
+        <!-- Himatif Inline SVG Logo -->
+        <div class="footer-logo-wrapper">
+          <svg width="45" height="45" viewBox="0 0 100 100" class="footer-logo-svg" aria-label="Himatif UTM Logo">
+            <defs>
+              <linearGradient id="himatifGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00b2f9" />
+                <stop offset="100%" stop-color="#0056b3" />
+              </linearGradient>
+            </defs>
+            <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" fill="url(#himatifGrad)" stroke="#ffffff" stroke-width="3" />
+            <text x="50%" y="45%" text-anchor="middle" fill="#ffffff" font-size="22" font-family="'Outfit', sans-serif" font-weight="900" dy=".3em">H</text>
+            <text x="50%" y="75%" text-anchor="middle" fill="#ffffff" font-size="10" font-family="'Outfit', sans-serif" font-weight="bold" letter-spacing="1">UTM</text>
+          </svg>
+          <span class="logo-text">HIMATIF UTM</span>
+        </div>
+
+        <!-- Booting & Memory 2024 Inline SVG Logo -->
+        <div class="footer-logo-wrapper">
+          <svg width="45" height="45" viewBox="0 0 100 100" class="footer-logo-svg" aria-label="Booting & Memory Logo">
+            <defs>
+              <linearGradient id="bootGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#10b981" />
+                <stop offset="100%" stop-color="#047857" />
+              </linearGradient>
+            </defs>
+            <rect x="10" y="10" width="80" height="80" rx="18" fill="url(#bootGrad)" stroke="#ffffff" stroke-width="3" />
+            <text x="50%" y="46%" text-anchor="middle" fill="#ffffff" font-size="16" font-family="'Outfit', sans-serif" font-weight="900" dy=".3em">B&M</text>
+            <text x="50%" y="74%" text-anchor="middle" fill="#ffffff" font-size="10" font-family="'Outfit', sans-serif" font-weight="bold">2024</text>
+          </svg>
+          <span class="logo-text">B&M 2024</span>
+        </div>
       </section>
-      <p>&copy; 2024 asolehmajid, All Rights Reserved.</p>
+      <p class="copyright">&copy; 2024 asolehmajid. All Rights Reserved.</p>
     </footer>
   </body>
 </html>
