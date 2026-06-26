@@ -269,7 +269,8 @@ main .main_title .divider {
   width: 100%;
 }
 
-.search-field-select-wrapper {
+/* Premium Select Wrapper (Generic) */
+.premium-select-wrapper {
   position: relative;
   display: flex;
   align-items: center;
@@ -277,21 +278,20 @@ main .main_title .divider {
   border: 1px solid var(--glass-border);
   border-radius: 12px;
   transition: all 0.3s;
-  width: 100%;
 }
 
-.search-field-select-wrapper:hover {
+.premium-select-wrapper:hover {
   border-color: rgba(219, 39, 119, 0.4);
   background: rgba(255, 255, 255, 0.75);
 }
 
-.search-field-select-wrapper:focus-within {
+.premium-select-wrapper:focus-within {
   border-color: var(--primary);
   box-shadow: 0 0 12px rgba(219, 39, 119, 0.15);
   background: rgba(255, 255, 255, 0.85);
 }
 
-.search-field-select-wrapper::after {
+.premium-select-wrapper::after {
   content: "";
   position: absolute;
   right: 1.25rem;
@@ -304,9 +304,13 @@ main .main_title .divider {
   transition: transform 0.3s, border-color 0.3s;
 }
 
-.search-field-select-wrapper:focus-within::after {
+.premium-select-wrapper:focus-within::after {
   transform: rotate(-135deg) translateY(-2px);
   border-color: var(--primary);
+}
+
+.search-field-select-wrapper {
+  width: 100%;
 }
 
 .premium-select {
@@ -375,44 +379,8 @@ main .main_title .divider {
 }
 
 .date-select-group .premium-select-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid var(--glass-border);
-  border-radius: 12px;
-  transition: all 0.3s;
   flex: 1 1 120px;
   min-width: 120px;
-}
-
-.date-select-group .premium-select-wrapper:hover {
-  border-color: rgba(219, 39, 119, 0.4);
-  background: rgba(255, 255, 255, 0.75);
-}
-
-.date-select-group .premium-select-wrapper:focus-within {
-  border-color: var(--primary);
-  box-shadow: 0 0 12px rgba(219, 39, 119, 0.15);
-  background: rgba(255, 255, 255, 0.85);
-}
-
-.date-select-group .premium-select-wrapper::after {
-  content: "";
-  position: absolute;
-  right: 1.25rem;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-right: 2px solid var(--text-muted);
-  border-bottom: 2px solid var(--text-muted);
-  transform: rotate(45deg);
-  pointer-events: none;
-  transition: transform 0.3s, border-color 0.3s;
-}
-
-.date-select-group .premium-select-wrapper:focus-within::after {
-  transform: rotate(-135deg) translateY(-2px);
-  border-color: var(--primary);
 }
 
 /* Utility Hidden Class */
@@ -467,6 +435,25 @@ main .main_title .divider {
   color: var(--text-inverse);
   font-weight: 600;
   box-shadow: 0 4px 10px rgba(219, 39, 119, 0.3);
+}
+
+/* Sort Box */
+.sort-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sort-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.sort-select-wrapper {
+  width: 100%;
 }
 
 /* ==========================================
@@ -744,6 +731,17 @@ footer {
     gap: 1rem;
     flex: 1 1 350px;
     justify-content: flex-end;
+  }
+
+  .sort-box {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    flex: 0 1 auto;
+  }
+
+  .sort-select-wrapper {
+    width: 200px;
   }
 }
 

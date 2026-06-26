@@ -5,6 +5,7 @@ let currentGroup = "all";
 let currentDateDay = "all";
 let currentDateMonth = "all";
 let currentDateYear = "all";
+let currentSort = "nim_asc"; // 'nim_asc', 'nim_desc', 'nama_asc', 'nama_desc'
 
 // DOM Elements
 const friendListContainer = document.getElementById("friend_list");
@@ -16,6 +17,7 @@ const dateSearchContainer = document.getElementById("date_search_container");
 const dateDaySelect = document.getElementById("date_day");
 const dateMonthSelect = document.getElementById("date_month");
 const dateYearSelect = document.getElementById("date_year");
+const sortSelect = document.getElementById("sort_select");
 
 /**
  * Mendapatkan URL foto yang aman dengan fallback jika undefined/kosong
@@ -219,6 +221,28 @@ function renderFriends() {
     }
   });
 
+  // Sort data berdasarkan kriteria terpilih
+  filteredData.sort((a, b) => {
+    if (currentSort === "nim_asc") {
+      const nimA = a.nim || "";
+      const nimB = b.nim || "";
+      return nimA.localeCompare(nimB, undefined, { numeric: true });
+    } else if (currentSort === "nim_desc") {
+      const nimA = a.nim || "";
+      const nimB = b.nim || "";
+      return nimB.localeCompare(nimA, undefined, { numeric: true });
+    } else if (currentSort === "nama_asc") {
+      const namaA = a.nama || "";
+      const namaB = b.nama || "";
+      return namaA.localeCompare(namaB);
+    } else if (currentSort === "nama_desc") {
+      const namaA = a.nama || "";
+      const namaB = b.nama || "";
+      return namaB.localeCompare(namaA);
+    }
+    return 0;
+  });
+
   if (filteredData.length === 0) {
     friendListContainer.innerHTML = `
       <div class="empty-state">
@@ -351,8 +375,18 @@ if (dateYearSelect) {
   });
 }
 
+if (sortSelect) {
+  sortSelect.addEventListener("change", (e) => {
+    currentSort = e.target.value;
+    renderFriends();
+  });
+}
+
 // Inisialisasi Render Awal
 document.addEventListener("DOMContentLoaded", () => {
+  if (sortSelect) {
+    sortSelect.value = currentSort;
+  }
   initializeGroupFilters();
   initializeDateDropdowns();
   renderFriends();
